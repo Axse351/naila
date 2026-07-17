@@ -68,6 +68,329 @@ footer {
 .background-header .main-nav .nav li a.active {
     color: #F4D03F !important;
 }
+/* =====================================================
+   ROCKPUKAT DESIGN SYSTEM
+   Tema: "gig poster" hijau alpukat — main tegas, hangat, playful
+===================================================== */
+:root {
+    --rp-forest: #1B4332;
+    --rp-forest-dark: #12301F;
+    --rp-avocado: #588157;
+    --rp-cream: #FBF7EE;
+    --rp-gold: #E3A33D;
+    --rp-ink: #1F2A24;
+    --rp-muted: #6B7A70;
+}
+
+/* ---------- Section rhythm & alternating background ---------- */
+#men {
+    background-color: #ffffff;
+}
+
+#child {
+    background-color: var(--rp-cream);
+    border-bottom: 3px dotted #e3dcc8;
+}
+
+#women,
+#info {
+    background-color: #ffffff;
+}
+
+/* ---------- Eyebrow label (pengganti/pelengkap section-heading) ---------- */
+.rp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--rp-avocado);
+    margin-bottom: 14px;
+}
+
+.rp-pick {
+    width: 14px;
+    height: 18px;
+    background: var(--rp-gold);
+    clip-path: path("M7 0C11 0 14 5 14 10C14 15 10 18 7 18C4 18 0 15 0 10C0 5 3 0 7 0Z");
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.section-heading h2 {
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: var(--rp-ink);
+}
+
+.section-heading span {
+    color: var(--rp-muted);
+}
+
+/* ---------- Visi Misi & Struktur Organisasi cards ---------- */
+#men .card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#men .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(27, 67, 50, 0.15) !important;
+}
+
+#men .card-header {
+    background: linear-gradient(135deg, var(--rp-forest) 0%, var(--rp-forest-dark) 100%) !important;
+    height: 8px;
+    border: none;
+}
+
+#men .card-body h4 {
+    font-weight: 800;
+    color: var(--rp-forest);
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+#men .card-body h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--rp-gold);
+    border-radius: 3px;
+}
+
+#men .card-body li {
+    list-style: none;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.8;
+    color: var(--rp-ink);
+}
+
+#men .card-body p li::before,
+#men .card-body ol li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rp-avocado);
+}
+
+.struktur-organisasi {
+    border-radius: 8px;
+}
+
+/* ---------- Promo cards: gaya "poster gig" miring ---------- */
+#child .card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .35s ease, box-shadow .35s ease;
+    box-shadow: 0 10px 25px rgba(27, 67, 50, 0.08);
+}
+
+#child .col-lg-4:nth-child(1) .card {
+    transform: rotate(-2.5deg);
+}
+
+#child .col-lg-4:nth-child(2) .card {
+    transform: rotate(1.5deg);
+}
+
+#child .col-lg-4:nth-child(3) .card {
+    transform: rotate(-1.5deg);
+}
+
+#child .card:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.02);
+    box-shadow: 0 22px 45px rgba(27, 67, 50, 0.22);
+    z-index: 2;
+    position: relative;
+}
+
+#child .card-img-top {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+#child .card-body h4 {
+    font-weight: 800;
+    color: var(--rp-forest);
+}
+
+#child .card-body p {
+    min-height: 44px;
+}
+
+#child .btn-success {
+    background-color: var(--rp-forest);
+    border-color: var(--rp-forest);
+    border-radius: 50px;
+    padding: 10px 22px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: all .25s ease;
+}
+
+#child .btn-success:hover {
+    background-color: var(--rp-gold);
+    border-color: var(--rp-gold);
+    color: var(--rp-ink);
+    transform: translateY(-2px);
+}
+
+/* ---------- Tombol Masuk / Daftar ---------- */
+.btn-group .btn {
+    border-radius: 50px !important;
+    padding: 12px 32px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.btn-group .btn-outline-success {
+    border: 2px solid var(--rp-forest);
+    color: var(--rp-forest);
+}
+
+.btn-group .btn-outline-success:hover {
+    background-color: var(--rp-forest);
+}
+
+.btn-group .btn-success {
+    background-color: var(--rp-forest);
+    border-color: var(--rp-forest);
+}
+
+/* ---------- Info section: fitur icons ---------- */
+#info .fitur {
+    padding: 20px 10px;
+}
+
+#info .fitur i {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 50%;
+    background: var(--rp-cream);
+    color: var(--rp-forest);
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: 14px;
+    transition: all .3s ease;
+}
+
+#info .fitur:hover i {
+    background: var(--rp-forest);
+    color: #fff;
+    transform: scale(1.08);
+}
+
+#info .fitur h6 {
+    font-weight: 700;
+    color: var(--rp-ink);
+}
+
+/* ---------- Info cards: lokasi/kontak/sosial ---------- */
+.info-card {
+    background: var(--rp-cream);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    height: 100%;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(27, 67, 50, 0.12);
+}
+
+.info-card i {
+    font-size: 28px;
+    color: var(--rp-forest);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.info-card h4 {
+    font-weight: 800;
+    color: var(--rp-forest);
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    color: var(--rp-muted);
+    margin-bottom: 6px;
+}
+
+.btn-rock {
+    background-color: var(--rp-forest);
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 12px;
+    transition: all .25s ease;
+}
+
+.btn-rock:hover {
+    background-color: var(--rp-gold);
+    color: var(--rp-ink);
+}
+
+/* ---------- Jam Operasional ---------- */
+.jam-operasional {
+    background: linear-gradient(135deg, var(--rp-forest) 0%, var(--rp-forest-dark) 100%);
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin-top: 40px;
+    color: #fff;
+}
+
+.jam-operasional h3 {
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.jam-operasional strong {
+    color: var(--rp-gold);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+
+.jam-operasional .col-lg-3 {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.jam-operasional .col-lg-3:first-child {
+    border-left: none;
+}
+
+@media (max-width: 991px) {
+    .jam-operasional .col-lg-3 {
+        border-left: none;
+        margin-bottom: 20px;
+    }
+
+    #child .card {
+        transform: none !important;
+    }
+}
 
 /* Judul */
 .section-heading h2,
