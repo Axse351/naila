@@ -1,0 +1,264 @@
+/* =====================================
+   ROCK PUKAT GREEN THEME
+===================================== */
+
+/* Warna utama Rock Pukat */
+.header-area,
+.background-header,
+footer {
+    background: #1B4332 !important;
+}
+
+/* Logo & Menu */
+.header-area .main-nav .nav li a,
+.background-header .main-nav .nav li a {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Hover menu */
+.header-area .main-nav .nav li a:hover,
+.header-area .main-nav .nav li a.active,
+.background-header .main-nav .nav li a:hover,
+.background-header .main-nav .nav li a.active {
+    color: #F4D03F !important;
+}
+
+/* Judul */
+.section-heading h2,
+h1, h2, h3, h4 {
+    color: #1B4332 !important;
+}
+
+/* Tombol */
+.main-button a,
+.main-border-button a {
+    background: #1B4332 !important;
+    border-color: #1B4332 !important;
+    color: #fff !important;
+}
+
+.main-button a:hover,
+.main-border-button a:hover {
+    background: #F4D03F !important;
+    border-color: #F4D03F !important;
+    color: #1B4332 !important;
+}
+
+/* Card */
+.item {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.item:hover {
+    box-shadow: 0 0 15px rgba(27, 67, 50, 0.3);
+}
+
+/* Footer */
+footer p,
+footer a {
+    color: #fff !important;
+}
+
+/* Hilangkan garis bawaan Hexashop */
+.section,
+#men,
+#women,
+#kids,
+footer .under-footer {
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+/* ==============================
+   TEMA ROCK PUKAT
+============================== */
+
+body{
+    background:#f5f5f5;
+}
+
+.section-heading h2{
+    color:#1B4332;
+    font-weight:700;
+}
+
+.item{
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+    background:#fff;
+}
+
+.item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(27,67,50,0.25);
+}
+
+.item .thumb{
+    background:#1B4332;
+}
+
+.item .thumb img{
+    width:100%;
+}
+
+.item .down-content{
+    padding:15px;
+}
+
+.item .down-content h4{
+    color:#1B4332;
+    font-size:22px;
+    font-weight:700;
+}
+
+.item .down-content span{
+    color:#F4D03F;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.hover-content{
+    background:rgba(27,67,50,0.8);
+}
+
+.hover-content ul li a{
+    background:#F4D03F;
+    color:#1B4332;
+}
+
+.hover-content ul li a:hover{
+    background:#ffffff;
+}
+
+.pagination ul li a{
+    border:1px solid #1B4332;
+    color:#1B4332;
+}
+
+.pagination ul li.active a,
+.pagination ul li a:hover{
+    background:#1B4332;
+    color:#fff;
+}
+
+/* Jarak dari navbar ke konten */
+#products{
+    padding-top: 180px;
+    padding-bottom: 80px;
+}
+
+/* Judul katalog */
+.section-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-heading h2{
+    font-size:40px;
+    font-weight:700;
+    color:#1B4332;
+    margin-bottom:10px;
+}
+
+.section-heading span{
+    font-size:16px;
+    color:#666;
+}
+.logo img{
+    max-height:70px;
+    width:auto;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: #1B4332 !important;
+}
+
+.card-body {
+    background: #ffffff;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.2);
+}
+.struktur-organisasi{
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.struktur-organisasi{
+    width: 100%;
+    height: auto;
+}
+
+.btn-success{
+    background-color:#1B4332;
+    border:none;
+}
+
+.btn-success:hover{
+    background-color:#2D6A4F;
+}
+.btn-group{
+    background: #f5f5f5;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.btn-group .btn{
+    width: 190px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 40px !important;
+    margin: 0 4px;
+    transition: all .3s ease;
+}
+
+/* Tombol aktif */
+.btn-success{
+    background: #1B4332;
+    border: none;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(27,67,50,.35);
+}
+
+/* Hover tombol aktif */
+.btn-success:hover{
+    background: #24543F;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(27,67,50,.45);
+}
+
+/* Tombol tidak aktif */
+.btn-outline-success{
+    background: transparent;
+    border: none;
+    color: #1B4332;
+}
+
+/* Hover tombol tidak aktif */
+.btn-outline-success:hover{
+    background: rgba(27,67,50,.08);
+    color: #1B4332;
+    transform: translateY(-3px);
+}
+
+
