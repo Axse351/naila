@@ -15,7 +15,52 @@ footer {
     color: #ffffff !important;
     font-weight: 600;
 }
+/* ===================================================
+   FIX: Header pakai position:absolute dari template asli,
+   jadi konten di halaman non-home (bukan Profil/Promo/Info)
+   perlu padding-top manual supaya tidak ketutup header.
+=================================================== */
+.inner-page {
+    padding-top: 150px;
+    padding-bottom: 60px;
+    min-height: 60vh;
+    /* biar footer tidak "naik" nempel kalau konten dikit */
+}
 
+@media (max-width: 767px) {
+    .inner-page {
+        padding-top: 130px;
+        min-height: 50vh;
+    }
+}
+/* ===================================================
+   STICKY FOOTER: footer selalu di bawah viewport,
+   walau konten halaman pendek.
+=================================================== */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Semua section/div hasil @yield('content') harus "mendorong" footer ke bawah */
+body>*:not(footer):not(#preloader) {
+    flex-shrink: 0;
+}
+
+/* Trik: bungkus @yield('content') dengan wrapper yang flex-grow */
+.main-content-wrapper {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
 /* Hover menu */
 .header-area .main-nav .nav li a:hover,
 .header-area .main-nav .nav li a.active,
