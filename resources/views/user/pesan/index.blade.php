@@ -18,6 +18,8 @@
                                     <h5 class="mb-1">{{ $order->invoice_number }}</h5>
                                     <span class="text-muted small">
                                         {{ $order->created_at->translatedFormat('d F Y, H:i') }}
+                                        &middot;
+                                        {{ $order->order_type === 'dine_in' ? 'Dine In' : 'Pick Up' }}
                                     </span>
                                     <div class="mt-1">
                                         @foreach ($order->items as $item)

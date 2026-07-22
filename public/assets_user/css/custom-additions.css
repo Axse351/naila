@@ -1,0 +1,93 @@
+/* =========================================================================
+   TAMBAHAN CUSTOM - ROCKPUKAT
+   Cara pakai: copy semua isi file ini, tempel di PALING BAWAH file
+   public/assets_user/css/custom.css yang sudah ada (jangan diganti,
+   ditambah saja di akhir).
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   1) FIX: menu navbar (misal "Katalog") tidak berubah warna kuning saat aktif/klik
+   Sebelumnya warna active/hover di custom.css memakai abu-abu (#aaa).
+   Di sini kita timpa jadi warna kuning khas Rockpukat.
+   ------------------------------------------------------------------------- */
+.header-area .main-nav .nav li:hover a,
+.header-area .main-nav .nav li a.active,
+.background-header .main-nav .nav li:hover a,
+.background-header .main-nav .nav li a.active {
+  color: #F4B41A !important;
+}
+
+/* Tombol "Keluar" di navbar biar tampil senada dengan link menu lainnya */
+.header-area .main-nav .nav li .btn-logout {
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2a2a2a;
+  letter-spacing: 1px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+}
+
+.header-area .main-nav .nav li .btn-logout:hover {
+  color: #F4B41A !important;
+}
+
+/* -------------------------------------------------------------------------
+   2) FIX: judul halaman (Katalog, Profil, Checkout, dst) kepotong setengah
+   Penyebabnya: .header-area posisinya absolute/fixed menutupi bagian atas
+   section, sedangkan section tsb hanya punya padding-top:50px (kurang tinggi).
+   Solusinya: tambah jarak aman di section-section berikut.
+   ------------------------------------------------------------------------- */
+#profile,
+#katalog,
+#checkout,
+#pembayaran,
+#pesan,
+#riwayat,
+#selesai {
+  padding-top: 160px !important;
+}
+
+/* Kalau device kecil (mobile), header jadi lebih pendek, jarak bisa dikurangi sedikit */
+@media (max-width: 767px) {
+  #profile,
+  #katalog,
+  #checkout,
+  #pembayaran,
+  #pesan,
+  #riwayat,
+  #selesai {
+    padding-top: 130px !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   3) Styling kecil untuk kartu pilihan metode pembayaran (radio QRIS/DANA/dst)
+   ------------------------------------------------------------------------- */
+#pembayaran .form-check {
+  text-align: left;
+}
+
+#pembayaran .form-check-input {
+  margin-top: 4px;
+}
+
+#pembayaran .form-check-label {
+  font-size: 16px;
+  color: #1B4332;
+}
+
+/* -------------------------------------------------------------------------
+   4) Progress bar kartu poin di halaman Profil
+   ------------------------------------------------------------------------- */
+#profile .progress {
+  border-radius: 20px;
+  background-color: #eee;
+}
+
+#profile .progress-bar {
+  border-radius: 20px;
+}

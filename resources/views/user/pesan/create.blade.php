@@ -43,6 +43,28 @@
                                         value="{{ old('qty', 1) }}" min="1" max="{{ $product->stok }}" required>
                                 </div>
 
+                                <div class="mb-3">
+                                    <label class="form-label d-block">Metode Ambil Pesanan</label>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="order_type"
+                                            id="dine_in" value="dine_in"
+                                            {{ old('order_type', 'dine_in') === 'dine_in' ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="dine_in">
+                                            Dine In (makan di tempat)
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="order_type"
+                                            id="pick_up" value="pick_up"
+                                            {{ old('order_type') === 'pick_up' ? 'checked' : '' }}>
+                                        <label class="form-check-label" for="pick_up">
+                                            Pick Up (ambil sendiri)
+                                        </label>
+                                    </div>
+                                </div>
+
                                 <button type="submit" class="btn btn-success w-100">
                                     Lanjut ke Ringkasan Pesanan
                                 </button>

@@ -35,6 +35,7 @@ class OrderController extends Controller
     {
         $request->validate([
             'qty' => ['required', 'integer', 'min:1', 'max:' . $product->stok],
+            'order_type' => ['required', 'in:dine_in,pick_up'],
         ], [
             'qty.max' => 'Jumlah melebihi stok yang tersedia (' . $product->stok . ').',
         ]);
@@ -42,12 +43,13 @@ class OrderController extends Controller
         $qty = (int) $request->qty;
         $subtotal = $product->harga * $qty;
 
-        $order = DB::transaction(function () use ($product, $qty, $subtotal) {
+        $order = DB::transaction(function () use ($product, $qty, $subtotal, $request) {
             $order = Order::create([
                 'user_id' => auth()->id(),
                 'invoice_number' => 'INV-' . strtoupper(Str::random(8)),
                 'total_harga' => $subtotal,
                 'status' => 'pending',
+                'order_type' => $request->order_type,
             ]);
 
             OrderItem::create([
@@ -74,7 +76,10 @@ class OrderController extends Controller
         return view('user.pesan.checkout', compact('order'));
     }
 
-    public function qris(Order $order): View|RedirectResponse
+    /**
+     * Halaman pilih metode pembayaran (QRIS / DANA / Seabank / Tunai).
+     */
+    public function pembayaran(Order $order): View|RedirectResponse
     {
         $this->authorizeOrder($order);
 
@@ -82,21 +87,25 @@ class OrderController extends Controller
             return redirect()->route('pesanan.selesai', $order);
         }
 
-        return view('user.pesan.qris', compact('order'));
+        return view('user.pesan.pembayaran', compact('order'));
     }
 
     /**
      * User klaim sudah bayar -> status jadi "menunggu_konfirmasi".
-     * Poin BELUM diberikan di sini, menunggu ACC admin.
+     * Poin BELUM diberikan di sini, menunggu ACC admin (lihat Admin\OrderController::approve).
      */
-    public function confirm(Order $order): RedirectResponse
+    public function confirm(Request $request, Order $order): RedirectResponse
     {
         $this->authorizeOrder($order);
+
+        $request->validate([
+            'payment_method' => ['required', 'in:qris,dana,seabank,tunai'],
+        ]);
 
         if ($order->status === 'pending') {
             $order->update([
                 'status' => 'menunggu_konfirmasi',
-                'payment_method' => 'qris',
+                'payment_method' => $request->payment_method,
             ]);
         }
 

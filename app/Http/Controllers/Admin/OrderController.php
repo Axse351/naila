@@ -10,6 +10,11 @@ use Illuminate\View\View;
 
 class OrderController extends Controller
 {
+    /**
+     * Nilai poin per 1 produk (sesuai S&K: 1 produk = 10 poin).
+     */
+    private const POINT_PER_PRODUK = 10;
+
     public function index(): View
     {
         $orders = Order::with('user', 'items')
@@ -28,11 +33,13 @@ class OrderController extends Controller
 
     /**
      * Admin ACC pembayaran -> status "paid", poin dikreditkan, stok dikurangi.
+     * Poin dihitung dari jumlah produk (qty) yang dibeli, bukan dari nominal rupiah.
      */
     public function approve(Order $order): RedirectResponse
     {
         if ($order->status === 'menunggu_konfirmasi') {
-            $point = intdiv((int) $order->total_harga, 10000);
+            $totalQty = $order->items->sum('qty');
+            $point = $totalQty * self::POINT_PER_PRODUK;
 
             DB::transaction(function () use ($order, $point) {
                 $order->update([

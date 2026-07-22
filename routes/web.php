@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/pesan/{product}', [OrderController::class, 'store'])->name('pesan.store');
 
     Route::get('/pesanan/{order}/checkout', [OrderController::class, 'checkout'])->name('pesanan.checkout');
-    Route::get('/pesanan/{order}/qris', [OrderController::class, 'qris'])->name('pesanan.qris');
+    Route::get('/pesanan/{order}/pembayaran', [OrderController::class, 'pembayaran'])->name('pesanan.pembayaran');
     Route::post('/pesanan/{order}/konfirmasi', [OrderController::class, 'confirm'])->name('pesanan.confirm');
     Route::get('/pesanan/{order}/selesai', [OrderController::class, 'selesai'])->name('pesanan.selesai');
 });

@@ -19,6 +19,15 @@ class OrderItem extends Model
         'subtotal',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'harga' => 'decimal:2',
+            'qty' => 'integer',
+            'subtotal' => 'decimal:2',
+        ];
+    }
+
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);

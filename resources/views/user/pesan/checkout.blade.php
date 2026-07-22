@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
 
-                    <div class="section-heading text-center mb-4">
+                    <div class="section-heading text-center mb-4" style="padding-top:50px;">
                         <h2>Ringkasan Pesanan</h2>
                         <span>No. Invoice: {{ $order->invoice_number }}</span>
                     </div>
@@ -44,13 +44,18 @@
                                 </tfoot>
                             </table>
 
-                            <p class="text-muted small mb-4">
-                                Estimasi poin yang akan kamu dapatkan setelah pembayaran:
-                                <strong>{{ intdiv((int) $order->total_harga, 10000) }} poin</strong>
+                            <p class="text-muted small mb-1">
+                                Metode ambil pesanan:
+                                <strong>{{ $order->order_type === 'dine_in' ? 'Dine In' : 'Pick Up' }}</strong>
                             </p>
 
-                            <a href="{{ route('pesanan.qris', $order) }}" class="btn btn-success w-100">
-                                Bayar dengan QRIS
+                            <p class="text-muted small mb-4">
+                                Estimasi poin yang akan kamu dapatkan setelah pembayaran dikonfirmasi admin:
+                                <strong>{{ $order->items->sum('qty') * 10 }} poin</strong>
+                            </p>
+
+                            <a href="{{ route('pesanan.pembayaran', $order) }}" class="btn btn-success w-100">
+                                Lanjutkan ke Pembayaran
                             </a>
                         </div>
                     </div>

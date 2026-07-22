@@ -19,12 +19,17 @@ class Order extends Model
         'payment_method',
         'point_didapat',
         'paid_at',
+        'order_type',
     ];
 
-    protected $casts = [
-        'paid_at' => 'datetime',
-        'total_harga' => 'decimal:2',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'total_harga' => 'decimal:2',
+            'point_didapat' => 'integer',
+            'paid_at' => 'datetime',
+        ];
+    }
 
     public function user(): BelongsTo
     {

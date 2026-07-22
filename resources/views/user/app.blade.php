@@ -1,5 +1,6 @@
 @extends('welcome')
 @section('content')
+    {{-- ===== PROFIL UMKM ===== --}}
     <section class="section" id="men">
         <div class="container-fluid">
             <div class="container">
@@ -10,7 +11,6 @@
                                 <span class="rp-pick"></span> UMKM ROCKPUKAT
                             </div>
                             <h2>Profil UMKM Rockpukat</h2>
-                            <span>Berikut Profil UMKM Rockpukat :</span>
                         </div>
                     </div>
                 </div>
@@ -24,18 +24,18 @@
                             <div class="card-body">
                                 <h4>Visi</h4>
                                 <p>
-                                    <li>Menjadi UMKM minuman alpukat kocok yang unggul, inovatif,</li>
-                                    <li>dikenal luas oleh masyarakat, dengan mengutamakan</li>
-                                    <li>kualitas produk serta pelayanan terbaik di era digital.</li>
+                                    Menjadi UMKM minuman alpukat kocok yang unggul, inovatif,
+                                    dikenal luas oleh masyarakat, dengan mengutamakan
+                                    kualitas produk serta pelayanan terbaik di era digital.
                                 </p>
                             </div>
                             <div class="card-body">
+                                <h4>Misi</h4>
                                 <ol>
-                                    <h4>Misi</h4>
-                                    <li>1. Menyajikan minuman alpukat kocok dengan bahan berkualitas, higienis, dan cita
-                                        rasa yang konsisten.</li>
-                                    <li>2. Mengembangkan variasi menu yang kreatif dan mengikuti tren pasar.</li>
-                                    <li>3. Membangun brand Rockpukat agar dikenal sebagai minuman sehat dan kekinian.</li>
+                                    <li>Menyajikan minuman alpukat kocok dengan bahan berkualitas, higienis, dan cita rasa
+                                        yang konsisten.</li>
+                                    <li>Mengembangkan variasi menu yang kreatif dan mengikuti tren pasar.</li>
+                                    <li>Membangun brand Rockpukat agar dikenal sebagai minuman sehat dan kekinian.</li>
                                 </ol>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
     </section>
     <!-- ***** Men Area Ends ***** -->
 
-    <!-- ***** child Area Starts ***** -->
+    <!-- ***** Promo Area Starts ***** -->
     <section class="section" id="child">
         <div class="container">
 
@@ -77,44 +77,48 @@
                             <span class="rp-pick"></span> PENAWARAN SPESIAL
                         </div>
                         <h2>Promo UMKM Rockpukat</h2>
-                        <span>Berikut Promo UMKM Rockpukat :</span>
                     </div>
                 </div>
             </div>
 
             <div class="row mt-5">
 
-                <!-- Promo 1 -->
+                <!-- Promo Buy 1 Get 1 -->
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
-                        <img src="{{ asset('assets_user/images/buy5get1.png') }}" class="card-img-top" alt="Promo Hemat">
+                        <img src="{{ asset('assets_user/images/buy1get1.png') }}" class="card-img-top"
+                            alt="Promo Buy 1 Get 1">
                         <div class="card-body">
                             <h4>Promo BUY 1 GET 1</h4>
                             <p>Nikmati penawaran menarik yang hanya didapatkan oleh akun baru.</p>
+                            <p class="text-danger small mb-2">*Khusus untuk pengguna baru</p>
                             <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Promo 2 -->
+                <!-- Promo Buy 5 Get 1 -->
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
-                        <img src="{{ asset('assets_user/images/buy1get1.png') }}" class="card-img-top" alt="Menu Favorit">
+                        <img src="{{ asset('assets_user/images/buy5get1.png') }}" class="card-img-top"
+                            alt="Promo Buy 5 Get 1">
                         <div class="card-body">
-                            <h4>PROMO BUY 5 FREE 1</h4>
-                            <p>Temukan berbagai menu favorit pelanggan dengan harga lebih murah.</p>
+                            <h4>PROMO BUY 5 GET 1</h4>
+                            <p>Beli 5 produk apa saja (varian bebas), gratis 1 produk pilihanmu.</p>
+                            <p class="text-danger small mb-2">*Hanya berlaku setiap tanggal 16</p>
                             <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Promo 3 -->
+                <!-- Promo Couple -->
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
-                        <img src="{{ asset('assets_user/images/logo.jpg') }}" class="card-img-top" alt="Promo Spesial">
+                        <img src="{{ asset('assets_user/images/promo-couple.jpeg') }}" class="card-img-top"
+                            alt="Promo Couple">
                         <div class="card-body">
-                            <h4>Promo Spesial</h4>
-                            <p>Khusus para pecinta Rockpukat spesial dan rahasia</p>
+                            <h4>Promo Couple</h4>
+                            <p>Beli 2 Rockpukat varian apa saja, gratis 1 Alpukat Original.</p>
                             <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
                         </div>
                     </div>
@@ -123,9 +127,9 @@
             </div>
         </div>
     </section>
-    <!-- ***** Child Area Ends ***** -->
+    <!-- ***** Promo Area Ends ***** -->
 
-    <!-- ***** Women Area Starts ***** -->
+    <!-- ***** Info Area Starts ***** -->
     <section class="section" id="women">
         <div class="container">
             <div class="row">
@@ -134,8 +138,7 @@
                         <div class="rp-eyebrow justify-content-center">
                             <span class="rp-pick"></span> SIAPA KAMI
                         </div>
-                        <h2>Info UMKM Rockpukat :</h2>
-                        <span>Berikut Info UMKM Rockpukat :</span>
+                        <h2>Info UMKM Rockpukat</h2>
                     </div>
                 </div>
             </div>
@@ -156,10 +159,10 @@
                     <h3 class="mb-3">Tentang Rockpukat</h3>
 
                     <p>
-                        Rockpukat merupakan UMKM yang bergerak di bidang makanan ringan
+                        Rockpukat merupakan UMKM yang bergerak di bidang minuman alpukat kocok
                         berbahan dasar alpukat pilihan. Kami berkomitmen menghadirkan
-                        camilan sehat, lezat, dan berkualitas dengan inovasi rasa yang
-                        disukai semua kalangan.
+                        minuman sehat, lezat, dan berkualitas dengan inovasi rasa yang
+                        disukai semua kalangan. #Enaknya Dikocokin!
                     </p>
 
                     <div class="row text-center mt-4">
@@ -189,27 +192,32 @@
 
             </div>
 
-            <!-- Card -->
+            <!-- Card Lokasi / Kontak / Sosmed -->
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="info-card">
                         <i class="fa fa-map-marker"></i>
                         <h4>Lokasi</h4>
                         <p>
-                            Jl. Raya Karanglewas No.123<br>
-                            Purwokerto, Jawa Tengah
+                            Jalan Tentara Pelajar, Grage Mall Cirebon.<br>
+                            Pintu keluar Grage Mall Cirebon, Jalan Samiaji.
                         </p>
-                        <a href="#" class="btn-rock">Lihat di Maps</a>
+                        <a href="https://maps.app.goo.gl/ZWj8oDjkWArtPkDq7" target="_blank" rel="noopener"
+                            class="btn-rock">
+                            Lihat di Maps
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 mb-4">
                     <div class="info-card">
-                        <i class="fa fa-phone"></i>
+                        <i class="fa fa-whatsapp"></i>
                         <h4>Kontak</h4>
-                        <p>0812-3456-7890</p>
-                        <p>rockpukat@gmail.com</p>
-                        <p>Respon cepat setiap hari</p>
+                        <p>Keluhan &amp; testimoni, chat langsung ya!</p>
+                        <a href="https://wa.me/628978401995?text=Halo%20Rockpukat%2C%20saya%20mau%20bertanya"
+                            target="_blank" rel="noopener" class="btn-rock">
+                            Chat via WhatsApp
+                        </a>
                     </div>
                 </div>
 
@@ -217,9 +225,18 @@
                     <div class="info-card">
                         <i class="fa fa-instagram"></i>
                         <h4>Sosial Media</h4>
-                        <p>@rockpukat</p>
-                        <p>Rockpukat Official</p>
-                        <p>@rockpukat.id</p>
+                        <p class="mb-2">
+                            <a href="https://www.instagram.com/rockpukatdotcom?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                target="_blank" rel="noopener">
+                                <i class="fa fa-instagram"></i> @rockpukatdotkom
+                            </a>
+                        </p>
+                        <p class="mb-0">
+                            <a href="https://www.tiktok.com/@rockpukatdotkom?_r=1&_t=ZS-98BotK3WlOO" target="_blank"
+                                rel="noopener">
+                                <i class="fa fa-music"></i> @rockpukatdotkom (TikTok)
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -234,20 +251,55 @@
                         </h3>
                     </div>
                     <div class="col-lg-3">
-                        <strong>Senin - Jumat</strong>
-                        08.00 - 20.00
+                        <strong>Senin - Kamis</strong><br>
+                        10.00 - 18.00
                     </div>
                     <div class="col-lg-3">
-                        <strong>Sabtu</strong>
-                        09.00 - 21.00
+                        <strong>Jumat - Sabtu</strong><br>
+                        13.00 - 18.00
                     </div>
                     <div class="col-lg-3">
-                        <strong>Minggu</strong>
-                        09.00 - 18.00
+                        <strong>Minggu</strong><br>
+                        LIBUR
+                    </div>
+                </div>
+            </div>
+
+            <!-- S&K Poin & Benefit Daftar Akun -->
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-header" style="background-color:#1B4332; color:#fff;">
+                            Syarat &amp; Ketentuan Poin
+                        </div>
+                        <div class="card-body">
+                            <ul class="mb-0">
+                                <li>Setiap pembelian 1 produk bernilai <strong>10 poin</strong>.</li>
+                                <li>Kumpulkan <strong>100 poin</strong> untuk mendapatkan 1 produk secara gratis.</li>
+                                <li>Minimal penukaran poin adalah <strong>100 poin</strong>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card shadow h-100">
+                        <div class="card-header" style="background-color:#1B4332; color:#fff;">
+                            Keuntungan Daftar Akun
+                        </div>
+                        <div class="card-body">
+                            <ul class="mb-0">
+                                <li>Dapatkan poin setiap pembelian, bisa ditukar produk gratis.</li>
+                                <li>Akses promo Buy 1 Get 1 khusus pengguna baru.</li>
+                                <li>Riwayat pesanan tersimpan rapi dan mudah dilacak.</li>
+                                <li>Info promo terbaru lebih dulu dari yang lain.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </section>
+    <!-- ***** Info Area Ends ***** -->
 @endsection

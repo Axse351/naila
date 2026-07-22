@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -21,27 +22,23 @@ class Product extends Model
         'status',
     ];
 
-    protected $casts = [
-        'harga' => 'decimal:2',
-    ];
-
-    /**
-     * Generate slug otomatis dari nama produk.
-     */
-    protected static function booted(): void
+    protected function casts(): array
     {
-        static::creating(function (Product $product) {
-            $product->slug = Str::slug($product->nama_produk) . '-' . uniqid();
-        });
-
-        static::updating(function (Product $product) {
-            if ($product->isDirty('nama_produk')) {
-                $product->slug = Str::slug($product->nama_produk) . '-' . uniqid();
-            }
-        });
+        return [
+            'harga' => 'decimal:2',
+            'stok' => 'integer',
+        ];
     }
 
-    public function scopeAktif($query)
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    /**
+     * Scope produk yang berstatus aktif saja.
+     */
+    public function scopeAktif(Builder $query): Builder
     {
         return $query->where('status', 'aktif');
     }
