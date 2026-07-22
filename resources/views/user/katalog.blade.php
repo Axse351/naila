@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-    <section class="section" id="katalog">
+    <section class="section inner-page" id="katalog">
         <div class="container">
 
             <div class="row">
