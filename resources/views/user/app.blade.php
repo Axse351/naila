@@ -83,13 +83,13 @@
 
             <div class="row mt-5">
 
-                <!-- Promo Buy 1 Get 1 -->
+                <!-- Promo Beli 1 Gratis 1 -->
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
                         <img src="{{ asset('assets_user/images/buy1get1.png') }}" class="card-img-top"
-                            alt="Promo Buy 1 Get 1">
+                            alt="Promo Beli 1 Gratis 1">
                         <div class="card-body">
-                            <h4>Promo BUY 1 GET 1</h4>
+                            <h4>Promo Beli 1 Gratis 1</h4>
                             <p>Nikmati penawaran menarik yang hanya didapatkan oleh akun baru.</p>
                             <p class="text-danger small mb-2">*Khusus untuk pengguna baru</p>
                             <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
@@ -97,13 +97,13 @@
                     </div>
                 </div>
 
-                <!-- Promo Buy 5 Get 1 -->
+                <!-- Promo Beli 5 Gratis 1 -->
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
                         <img src="{{ asset('assets_user/images/buy5get1.png') }}" class="card-img-top"
-                            alt="Promo Buy 5 Get 1">
+                            alt="Promo Beli 5 Gratis 1">
                         <div class="card-body">
-                            <h4>PROMO BUY 5 GET 1</h4>
+                            <h4>PROMO BELI 5 GRATIS 1</h4>
                             <p>Beli 5 produk apa saja (varian bebas), gratis 1 produk pilihanmu.</p>
                             <p class="text-danger small mb-2">*Hanya berlaku setiap tanggal 16</p>
                             <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
@@ -111,13 +111,13 @@
                     </div>
                 </div>
 
-                <!-- Promo Couple -->
+                <!-- Promo Pasangan -->
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
                         <img src="{{ asset('assets_user/images/promo-couple.jpeg') }}" class="card-img-top"
-                            alt="Promo Couple">
+                            alt="Promo Pasangan">
                         <div class="card-body">
-                            <h4>Promo Couple</h4>
+                            <h4>Promo Pasangan</h4>
                             <p>Beli 2 Rockpukat varian apa saja, gratis 1 Alpukat Original.</p>
                             <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
                         </div>

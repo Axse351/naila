@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-    <section class="section" id="pesan">
+    <section class="section inner-page" id="pesan">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -47,8 +47,8 @@
                                     <label class="form-label d-block">Metode Ambil Pesanan</label>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="order_type"
-                                            id="dine_in" value="dine_in"
+                                        <input class="form-check-input" type="radio" name="order_type" id="dine_in"
+                                            value="dine_in"
                                             {{ old('order_type', 'dine_in') === 'dine_in' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="dine_in">
                                             Dine In (makan di tempat)
@@ -56,9 +56,8 @@
                                     </div>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="order_type"
-                                            id="pick_up" value="pick_up"
-                                            {{ old('order_type') === 'pick_up' ? 'checked' : '' }}>
+                                        <input class="form-check-input" type="radio" name="order_type" id="pick_up"
+                                            value="pick_up" {{ old('order_type') === 'pick_up' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="pick_up">
                                             Pick Up (ambil sendiri)
                                         </label>

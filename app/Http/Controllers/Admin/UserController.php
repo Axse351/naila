@@ -40,6 +40,7 @@ class UserController extends Controller
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
         $data['point'] = $data['point'] ?? 0;
+        $data['no_hp'] = $data['no_hp'] ?? null;
 
         User::create($data);
 
@@ -64,6 +65,7 @@ class UserController extends Controller
         }
 
         $data['point'] = $data['point'] ?? $user->point;
+        $data['no_hp'] = $data['no_hp'] ?? $user->no_hp;
 
         $user->update($data);
 

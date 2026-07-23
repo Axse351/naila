@@ -1,11 +1,11 @@
 @extends('welcome')
 @section('content')
-    <section class="section" id="selesai">
+    <section class="section inner-page" id="selesai">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
 
-                    <div class="section-heading text-center mb-4" style="padding-top:50px;">
+                    <div class="section-heading text-center mb-4">
                         <h2>Status Pesanan</h2>
                         <span>No. Invoice: {{ $order->invoice_number }}</span>
                     </div>

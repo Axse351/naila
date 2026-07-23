@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('content')
 
-    <section class="section" id="riwayat">
+    <section class="section inner-page" id="pesan">
         <div class="container">
 
             <div class="section-heading text-center mb-4" style="padding-top:50px;">

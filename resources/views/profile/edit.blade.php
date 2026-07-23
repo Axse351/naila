@@ -1,9 +1,9 @@
 @extends('welcome')
 @section('content')
-    <section class="section" id="profile">
+    <section class="section inner-page" id="profile">
         <div class="container">
 
-            <div class="section-heading text-center" style="padding-top:50px;">
+            <div class="section-heading text-center">
                 <h2>Profil Saya</h2>
                 <span>Kelola informasi akun dan lihat poin kamu</span>
             </div>
@@ -38,7 +38,8 @@
 
                             @if ($sisaPoin > 0)
                                 <span class="text-muted small d-block mb-3">
-                                    Kurang <strong>{{ $sisaPoin }} poin</strong> lagi untuk bisa menukar 1 produk gratis.
+                                    Kurang <strong>{{ $sisaPoin }} poin</strong> lagi untuk bisa menukar 1 produk
+                                    gratis.
                                 </span>
                             @else
                                 <span class="text-success small d-block mb-3">
@@ -53,7 +54,8 @@
                             </p>
                             <ul class="small text-muted text-start mb-0">
                                 <li>Setiap pembelian 1 produk bernilai <strong>10 poin</strong>.</li>
-                                <li>Kumpulkan <strong>100 poin</strong> untuk mendapatkan <strong>1 produk gratis</strong>.</li>
+                                <li>Kumpulkan <strong>100 poin</strong> untuk mendapatkan <strong>1 produk gratis</strong>.
+                                </li>
                                 <li>Minimal penukaran adalah <strong>100 poin</strong>.</li>
                             </ul>
                         </div>
