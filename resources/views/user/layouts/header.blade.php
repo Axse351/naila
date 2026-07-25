@@ -34,11 +34,7 @@
     </li>
 
                         @auth
-                            <li>
-                                <a href="{{ route('pesanan.index') }}" class="{{ request()->routeIs('pesanan.*') ? 'active' : '' }}">
-                                    Pesanan Saya
-                                </a>
-                            </li>
+
 
                             @if (auth()->user()->isAdmin())
                                 <li><a href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>

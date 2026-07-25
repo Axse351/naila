@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')">
                         {{ __('Kelola Pesanan') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.redemptions.index')" :active="request()->routeIs('admin.redemptions.*')">
+                        {{ __('Tukar Poin') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -95,6 +98,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.orders.index')" :active="request()->routeIs('admin.orders.*')">
                 {{ __('Kelola Pesanan') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.redemptions.index')" :active="request()->routeIs('admin.redemptions.*')">
+                {{ __('Tukar Poin') }}
             </x-responsive-nav-link>
         </div>
 
