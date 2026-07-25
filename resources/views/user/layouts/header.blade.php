@@ -22,6 +22,16 @@
                                 Katalog
                             </a>
                         </li>
+                         <li>
+        <a href="{{ route('pesanan.index') }}" class="{{ request()->routeIs('pesanan.*') ? 'active' : '' }}">
+            Pesanan Saya
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('redemptions.index') }}" class="{{ request()->routeIs('redemptions.*') ? 'active' : '' }}">
+            Tukar Poin
+        </a>
+    </li>
 
                         @auth
                             <li>

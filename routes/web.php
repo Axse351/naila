@@ -3,10 +3,12 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\RedemptionController as AdminRedemptionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RedemptionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -29,6 +31,10 @@ Route::middleware(['auth', 'admin'])
         Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
         Route::post('/orders/{order}/approve', [AdminOrderController::class, 'approve'])->name('orders.approve');
         Route::post('/orders/{order}/reject', [AdminOrderController::class, 'reject'])->name('orders.reject');
+
+        Route::get('/redemptions', [AdminRedemptionController::class, 'index'])->name('redemptions.index');
+        Route::post('/redemptions/{redemption}/approve', [AdminRedemptionController::class, 'approve'])->name('redemptions.approve');
+        Route::post('/redemptions/{redemption}/reject', [AdminRedemptionController::class, 'reject'])->name('redemptions.reject');
     });
 
 // Route profile (bawaan Breeze) + fitur pemesanan (khusus user login)
@@ -46,6 +52,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/pesanan/{order}/pembayaran', [OrderController::class, 'pembayaran'])->name('pesanan.pembayaran');
     Route::post('/pesanan/{order}/konfirmasi', [OrderController::class, 'confirm'])->name('pesanan.confirm');
     Route::get('/pesanan/{order}/selesai', [OrderController::class, 'selesai'])->name('pesanan.selesai');
+
+    Route::get('/tukar-poin', [RedemptionController::class, 'index'])->name('redemptions.index');
+    Route::get('/tukar-poin/ajukan', [RedemptionController::class, 'create'])->name('redemptions.create');
+    Route::post('/tukar-poin', [RedemptionController::class, 'store'])->name('redemptions.store');
 });
 
 require __DIR__ . '/auth.php';

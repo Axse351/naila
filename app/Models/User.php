@@ -66,4 +66,8 @@ class User extends Authenticatable
     {
         return $this->role === 'admin';
     }
+    public function redemptions(): HasMany
+{
+    return $this->hasMany(Redemption::class);
+}
 }
