@@ -9,6 +9,7 @@ use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class ProductController extends Controller
@@ -35,6 +36,8 @@ class ProductController extends Controller
     {
         $data = $request->validated();
 
+        $data['slug'] = $this->generateUniqueSlug($data['nama_produk']);
+
         if ($request->hasFile('gambar')) {
             $data['gambar'] = $request->file('gambar')->store('produk', 'public');
         }
@@ -54,6 +57,11 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product): RedirectResponse
     {
         $data = $request->validated();
+
+        // Regenerate slug hanya kalau nama produk berubah, biar slug lama tidak berubah-ubah tanpa alasan
+        if ($data['nama_produk'] !== $product->nama_produk) {
+            $data['slug'] = $this->generateUniqueSlug($data['nama_produk'], $product->id);
+        }
 
         if ($request->hasFile('gambar')) {
             if ($product->gambar) {
@@ -80,5 +88,27 @@ class ProductController extends Controller
         return redirect()
             ->route('admin.products.index')
             ->with('success', 'Produk berhasil dihapus.');
+    }
+
+    /**
+     * Bikin slug unik dari nama produk. Kalau slug dasar sudah dipakai,
+     * tambahkan angka di belakang (mis. alpukat-original-2).
+     */
+    private function generateUniqueSlug(string $namaProduk, ?int $ignoreId = null): string
+    {
+        $baseSlug = Str::slug($namaProduk);
+        $slug = $baseSlug;
+        $counter = 1;
+
+        while (
+            Product::where('slug', $slug)
+                ->when($ignoreId, fn ($query) => $query->where('id', '!=', $ignoreId))
+                ->exists()
+        ) {
+            $counter++;
+            $slug = "{$baseSlug}-{$counter}";
+        }
+
+        return $slug;
     }
 }

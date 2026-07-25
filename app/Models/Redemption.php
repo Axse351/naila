@@ -30,13 +30,10 @@ class Redemption extends Model
         'diproses_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'poin_dipakai' => 'integer',
-            'diproses_at' => 'datetime',
-        ];
-    }
+    protected $casts = [
+        'poin_dipakai' => 'integer',
+        'diproses_at' => 'datetime',
+    ];
 
     public function user(): BelongsTo
     {
