@@ -44,11 +44,11 @@
 
                                 <div class="text-end">
                                     @if ($redemption->status === 'menunggu')
-                                        <span class="badge bg-warning text-dark">Menunggu Konfirmasi</span>
+                                        <span class="badge text-bg-warning">Menunggu Konfirmasi</span>
                                     @elseif ($redemption->status === 'disetujui')
-                                        <span class="badge bg-success">Disetujui</span>
+                                        <span class="badge text-bg-success">Disetujui</span>
                                     @else
-                                        <span class="badge bg-danger">Ditolak</span>
+                                        <span class="badge text-bg-danger">Ditolak</span>
                                     @endif
                                 </div>
                             </div>
@@ -57,9 +57,9 @@
                         <p class="text-center text-muted">Kamu belum pernah mengajukan tukar poin.</p>
                     @endforelse
 
-                    <div class="d-flex justify-content-center mt-3">
+                    <nav aria-label="Navigasi halaman riwayat tukar poin" class="d-flex justify-content-center mt-3">
                         {{ $redemptions->links() }}
-                    </div>
+                    </nav>
 
                 </div>
             </div>

@@ -8,7 +8,7 @@
                     <div class="col-lg-12">
                         <div class="section-heading text-center" style="padding-top:50px;">
                             <div class="rp-eyebrow justify-content-center">
-                                <span class="rp-pick"></span> UMKM ROCKPUKAT
+                                <span class="rp-pick" aria-hidden="true"></span> UMKM ROCKPUKAT
                             </div>
                             <h2>Profil UMKM Rockpukat</h2>
                         </div>
@@ -47,7 +47,8 @@
                             <div class="card-header"></div>
                             <div class="card-body text-center">
                                 <img src="{{ asset('assets_user/images/struktur.png') }}"
-                                    alt="Struktur Organisasi Rockpukat" class="img-fluid struktur-organisasi">
+                                    alt="Struktur Organisasi Rockpukat" class="img-fluid struktur-organisasi"
+                                    loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -55,7 +56,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center mt-5">
-                    <div class="btn-group" role="group">
+                    <div class="btn-group" role="group" aria-label="Pilihan masuk atau daftar akun">
                         <a href="{{ route('login') }}" class="btn btn-outline-success">Masuk</a>
                         <a href="{{ route('register') }}" class="btn btn-success active">Daftar</a>
                     </div>
@@ -74,7 +75,7 @@
                 <div class="col-lg-12">
                     <div class="section-heading text-center" style="padding-top:50px;">
                         <div class="rp-eyebrow justify-content-center">
-                            <span class="rp-pick"></span> PENAWARAN SPESIAL
+                            <span class="rp-pick" aria-hidden="true"></span> PENAWARAN SPESIAL
                         </div>
                         <h2>Promo UMKM Rockpukat</h2>
                     </div>
@@ -87,12 +88,12 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
                         <img src="{{ asset('assets_user/images/buy1get1.png') }}" class="card-img-top"
-                            alt="Promo Beli 1 Gratis 1">
+                            alt="Promo Beli 1 Gratis 1" loading="lazy" decoding="async">
                         <div class="card-body">
                             <h4>Promo Beli 1 Gratis 1</h4>
                             <p>Nikmati penawaran menarik yang hanya didapatkan oleh akun baru.</p>
                             <p class="text-danger small mb-2">*Khusus untuk pengguna baru</p>
-                            <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
+                            <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo Beli 1 Gratis 1</a>
                         </div>
                     </div>
                 </div>
@@ -101,12 +102,12 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
                         <img src="{{ asset('assets_user/images/buy5get1.png') }}" class="card-img-top"
-                            alt="Promo Beli 5 Gratis 1">
+                            alt="Promo Beli 5 Gratis 1" loading="lazy" decoding="async">
                         <div class="card-body">
                             <h4>PROMO BELI 5 GRATIS 1</h4>
                             <p>Beli 5 produk apa saja (varian bebas), gratis 1 produk pilihanmu.</p>
                             <p class="text-danger small mb-2">*Hanya berlaku setiap tanggal 16</p>
-                            <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
+                            <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo Beli 5 Gratis 1</a>
                         </div>
                     </div>
                 </div>
@@ -115,11 +116,11 @@
                 <div class="col-lg-4 mb-4">
                     <div class="card shadow h-100 text-center">
                         <img src="{{ asset('assets_user/images/promo-couple.jpeg') }}" class="card-img-top"
-                            alt="Promo Pasangan">
+                            alt="Promo Pasangan" loading="lazy" decoding="async">
                         <div class="card-body">
                             <h4>Promo Pasangan</h4>
                             <p>Beli 2 Rockpukat varian apa saja, gratis 1 Alpukat Original.</p>
-                            <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo</a>
+                            <a href="{{ route('katalog') }}" class="btn btn-success">Lihat Promo Pasangan</a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +137,7 @@
                 <div class="col-lg-12">
                     <div class="section-heading text-center">
                         <div class="rp-eyebrow justify-content-center">
-                            <span class="rp-pick"></span> SIAPA KAMI
+                            <span class="rp-pick" aria-hidden="true"></span> SIAPA KAMI
                         </div>
                         <h2>Info UMKM Rockpukat</h2>
                     </div>
@@ -152,7 +153,8 @@
             <div class="row align-items-center mb-5">
 
                 <div class="col-lg-5">
-                    <img src="{{ asset('assets_user/images/logo.jpg') }}" class="img-fluid rounded shadow" alt="Rockpukat">
+                    <img src="{{ asset('assets_user/images/logo.jpg') }}" class="img-fluid rounded shadow"
+                        alt="Rockpukat" loading="lazy" decoding="async">
                 </div>
 
                 <div class="col-lg-7">
@@ -168,21 +170,21 @@
                     <div class="row text-center mt-4">
                         <div class="col-md-4">
                             <div class="fitur">
-                                <i class="fa fa-leaf"></i>
+                                <i class="fa fa-leaf" aria-hidden="true"></i>
                                 <h6>Bahan Pilihan</h6>
                                 <small>Menggunakan bahan berkualitas.</small>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="fitur">
-                                <i class="fa fa-heart"></i>
+                                <i class="fa fa-heart" aria-hidden="true"></i>
                                 <h6>Tanpa Pengawet</h6>
                                 <small>Aman dikonsumsi setiap hari.</small>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="fitur">
-                                <i class="fa fa-thumbs-up"></i>
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                                 <h6>Rasa Nikmat</h6>
                                 <small>Cita rasa yang disukai semua kalangan.</small>
                             </div>
@@ -196,7 +198,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <div class="info-card">
-                        <i class="fa fa-map-marker"></i>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <h4>Lokasi</h4>
                         <p>
                             Jalan Tentara Pelajar, Grage Mall Cirebon.<br>
@@ -204,37 +206,37 @@
                         </p>
                         <a href="https://maps.app.goo.gl/ZWj8oDjkWArtPkDq7" target="_blank" rel="noopener"
                             class="btn-rock">
-                            Lihat di Maps
+                            Lihat Lokasi Rockpukat di Maps
                         </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 mb-4">
                     <div class="info-card">
-                        <i class="fa fa-whatsapp"></i>
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
                         <h4>Kontak</h4>
                         <p>Keluhan &amp; testimoni, chat langsung ya!</p>
                         <a href="https://wa.me/628978401995?text=Halo%20Rockpukat%2C%20saya%20mau%20bertanya"
                             target="_blank" rel="noopener" class="btn-rock">
-                            Chat via WhatsApp
+                            Chat Rockpukat via WhatsApp
                         </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 mb-4">
                     <div class="info-card">
-                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
                         <h4>Sosial Media</h4>
                         <p class="mb-2">
                             <a href="https://www.instagram.com/rockpukatdotcom?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                                 target="_blank" rel="noopener">
-                                <i class="fa fa-instagram"></i> @rockpukatdotkom
+                                <i class="fa fa-instagram" aria-hidden="true"></i> Instagram @rockpukatdotkom
                             </a>
                         </p>
                         <p class="mb-0">
                             <a href="https://www.tiktok.com/@rockpukatdotkom?_r=1&_t=ZS-98BotK3WlOO" target="_blank"
                                 rel="noopener">
-                                <i class="fa fa-music"></i> @rockpukatdotkom (TikTok)
+                                <i class="fa fa-music" aria-hidden="true"></i> TikTok @rockpukatdotkom
                             </a>
                         </p>
                     </div>
@@ -246,7 +248,7 @@
                 <div class="row text-center align-items-center">
                     <div class="col-lg-3">
                         <h3>
-                            <i class="fa fa-clock-o"></i>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
                             Jam Operasional
                         </h3>
                     </div>
